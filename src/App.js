@@ -57,6 +57,120 @@ const App = () => {
     // console.log(Math.max(...[0, 150, 30, 20, -8, -200, 546]?.map(o => o), 0))
     // console.log('random', Math.floor(100000 + Math.random() * 900000))
 
+  
+  /* const data = [10, "A", 20, "B", 30, "C", 40, "D"]
+        let letterArray = [];
+        let numberArray = [];
+
+        for (let num = 0; num < data.length; num++) {
+            // console.log(typeof data[num] === 'string')
+            if (typeof data[num] === 'string') {
+                letterArray.push(data[num])
+            } else if (Number(data[num])) {
+                numberArray.push(data[num]);
+            }
+        }
+        console.log(letterArray)
+        console.log(numberArray) */
+        const data = [{ value: 10, }, { value: "A" }, { value: 20 }, { value: "B" }, , { value: 30, }, { value: "C" }, { value: 40, }, { value: "D" }]
+        let letterArray = [];
+        let numberArray = [];
+
+        for (let num = 0; num < data?.length; num++) {
+            if (typeof data[num]?.value === 'string') {
+                letterArray.push(data[num]?.value)
+            } else if (Number(data[num]?.value)) {
+                numberArray.push(data[num]?.value);
+            }
+        }
+        // console.log(letterArray)
+        // console.log(numberArray)
+
+        /* function generatePpyramind() {
+            var totalNumberofRow = 5;
+            var output = '*'
+            for (var i = 1; i <= totalNumberofRow; i++) {
+                for (var j = 1; j <= i; j++) {
+                    output += j + ' ';
+                }
+                console.log(output);
+                output = '*'
+            }
+        }
+        generatePpyramind(); */
+
+
+        const ArrData = [
+            [[{ value: 1 }, [{ value: 2 }]], { value: 3 }, { value: 4 }],
+            [{ value: 5 }, { value: 6 }, [{ value: 7 }, { value: 8 }]],
+            [{ value: 9 }, { value: 10 }, [{ value: 11 }, { value: 12 }]],
+            [{ value: 13 }, { value: 14 }, [{ value: 15 }, { value: 16 }]],
+        ]
+        function flatten(arr) {
+            return arr.reduce(function (flat, toFlatten) {
+                return flat.concat(
+                    Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten
+                );
+            }, []);
+        }
+
+        // flatten(ArrData)?.map((value) => { console.log(value?.value) })
+
+        var arrays = [
+            ["$6"],
+            ["$12"],
+            ["$25"],
+            ["$25"],
+            ["$18"],
+            ["$22"],
+            ["$10"]
+        ];
+        var merged = [].concat.apply([], arrays);
+        // console.log(merged);
+
+        function foo() {
+            let b = 1;
+            function inner() {
+                return b;
+            }
+            return inner;
+        }
+        let get_func_inner = foo();
+        // console.log(get_func_inner());
+
+        function init() {
+            var name = "Mozilla";
+            const displayName = () => {
+                return name
+            }
+            return displayName;
+        }
+        const oneFunc = init();
+        // console.log(oneFunc())
+
+        // program to count down numbers to 1
+        function countDown(number) {
+            // console.log(number);
+            const newNumber = number - 1;
+            if (newNumber > 0) {
+                countDown(newNumber);
+            }
+            return newNumber
+        }
+
+        // console.log(countDown(4))
+
+        const arryar = [1, 2, 3, 4, 5, 6, 7, 8]
+        // console.log(arryar?.splice(0, 2))
+
+        const MapM = arryar.map((value) => value)
+        // console.log(MapM)
+        const array1 = ['a', 'b', 'c'];
+        // arryar.forEach((element) => console.log(element));
+
+        const string = 'biswas'
+        console.log([...new Set(string)].join(''))
+
   return (
     <div style={{
       height: '100vh',
